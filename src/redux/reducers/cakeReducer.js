@@ -5,6 +5,10 @@ const initialState = {
 };
 
 const cakeReducer = (state = initialState, action) => {
+  if (action.type === BUYCAKE) {
+    return {};
+  }
+
   return state;
 };
 
