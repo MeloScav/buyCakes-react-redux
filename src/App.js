@@ -16,7 +16,10 @@ const App = () => {
       <p>{`Gâteaux restant: ${nbrCakes}`}</p>
 
       <h2>{"Mon panier :"}</h2>
-      <p>{`Vous avez actuellement ${myCakes} cake`}</p>
+      <p>
+        {`Vous avez actuellement ${myCakes} `}
+        {myCakes > 1 ? "gâteaux" : "gâteau"}
+      </p>
       <button
         type={"button"}
         onClick={() => {
