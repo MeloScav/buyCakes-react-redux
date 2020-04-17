@@ -1,12 +1,17 @@
 import { BUYCAKE } from "../types/cakeTypes";
 
 const initialState = {
-  cake: 13,
+  cakes: 13,
+  myCakes: 0,
 };
 
 const cakeReducer = (state = initialState, action) => {
   if (action.type === BUYCAKE) {
-    return {};
+    return {
+      ...state,
+      cakes: state.cakes - 1,
+      myCakes: state.myCakes + 1,
+    };
   }
 
   return state;
