@@ -6,22 +6,22 @@ const initialState = {
 };
 
 const cakeReducer = (state = initialState, action) => {
-  if (action.type === BUYCAKE) {
-    return {
-      ...state,
-      cakes: state.cakes > 0 ? state.cakes - 1 : state.cakes,
-      myCakes: state.myCakes < 13 ? state.myCakes + 1 : state.myCakes,
-    };
+  switch (action.type) {
+    case BUYCAKE:
+      return {
+        ...state,
+        cakes: state.cakes > 0 ? state.cakes - 1 : state.cakes,
+        myCakes: state.myCakes < 13 ? state.myCakes + 1 : state.myCakes,
+      };
+    case LESSCAKE:
+      return {
+        ...state,
+        cakes: state.cakes < 13 ? state.cakes + 1 : state.cakes,
+        myCakes: state.myCakes > 0 ? state.myCakes - 1 : state.myCakes,
+      };
+    default:
+      return state;
   }
-  if (action.type === LESSCAKE) {
-    return {
-      ...state,
-      cakes: state.cakes < 13 ? state.cakes + 1 : state.cakes,
-      myCakes: state.myCakes > 0 ? state.myCakes - 1 : state.myCakes,
-    };
-  }
-
-  return state;
 };
 
 export default cakeReducer;
