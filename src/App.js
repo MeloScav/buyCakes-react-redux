@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { BuyCakes } from "./redux/actions/cakeActions";
+import { LessCakes } from "./redux/actions/lessCakeActions";
 
 const App = () => {
   // initial state
@@ -20,14 +21,30 @@ const App = () => {
         {`Vous avez actuellement ${myCakes} `}
         {myCakes > 1 ? "gâteaux" : "gâteau"}
       </p>
-      <button
-        type={"button"}
-        onClick={() => {
-          dispatch(BuyCakes());
-        }}
-      >
-        {"Ajouter"}
-      </button>
+
+      <div className={"buttons"}>
+        <button
+          type={"button"}
+          onClick={() => {
+            dispatch(BuyCakes());
+          }}
+        >
+          {myCakes <= 0 ? "Ajouter" : "+"}
+        </button>
+
+        {myCakes >= 1 ? <p>{myCakes}</p> : null}
+
+        {myCakes >= 1 ? (
+          <button
+            type={"button"}
+            onClick={() => {
+              dispatch(LessCakes());
+            }}
+          >
+            {"-"}
+          </button>
+        ) : null}
+      </div>
     </>
   );
 };

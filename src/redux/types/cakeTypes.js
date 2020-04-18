@@ -1,3 +1,3 @@
 export const BUYCAKE = "BUYCAKE";
 
-export const MYCAKES = "MYCAKES";
+export const LESSCAKE = "LESSCAKE";
