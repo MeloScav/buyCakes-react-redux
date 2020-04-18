@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 const Bag = () => {
   // initial state
-  const nbrCakes = useSelector((state) => state.cakes);
   const myCakes = useSelector((state) => state.myCakes);
 
   return (

@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { BuyCakes } from "../redux/actions/cakeActions";
-import { LessCakes } from "../redux/actions/lessCakeActions";
+import { BuyCakes, LessCakes } from "../redux/actions/cakeActions";
 
 const Buttons = () => {
   // initial state
